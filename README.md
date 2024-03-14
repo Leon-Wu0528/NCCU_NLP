@@ -8,7 +8,8 @@ The course provides a fact database and a claim. Students are required to develo
 Classroom assignments include Chinese_word_segmentation, Naive_Bayes_Classifier, Stance_Detection.	
 
 ## Project Description
-[PDF說明文件](Automated Fact Retrieval and Verification System/brief_report.pdf)
+[PDF說明文件](Automated%20Fact%20Retrieval%20and%20Verification%20System/brief_report.pdf)
+
 
 ## 專案相關工具與Web API/Services使用方式
 * [請參考資料夾-XXX/ooo/03.開發](url)
