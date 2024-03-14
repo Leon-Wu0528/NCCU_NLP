@@ -10,17 +10,32 @@ Classroom assignments include Chinese_word_segmentation, Naive_Bayes_Classifier,
 ## Project Description
 [brief report](Automated%20Fact%20Retrieval%20and%20Verification%20System/brief_report.pdf)
 
+
 ## Example
+```python
+from transformers import BertTokenizer, TFBertForSequenceClassification
+tokenizer = BertTokenizer.from_pretrained('bert-base-chinese')
+test_input_ids = []
+test_attention_masks = []
 
-### 方法名稱
+for entry in tqdm(test_data):
+    claim = entry['claim']
+    encoded = tokenizer.encode_plus()
+    test_input_ids.append(encoded['input_ids'])
+    test_attention_masks.append(encoded['attention_mask'])
 
-#### 用途描述
+test_input_ids = tf.concat(test_input_ids, axis=0)
+test_attention_masks = tf.concat(test_attention_masks, axis=0)
 
-* 加法計算
-* 回傳計算結果
+predictions = loaded_model.predict(
+    x={'input_ids': test_input_ids, 'attention_mask': test_attention_masks}
+)
 
-#### Sample Code
-
-```cs
-int c = Calculator.Add(a, b);
 ```
+## References
+- [Stickland, et al., ICML’19] [Houlsby, et al., ICML’19]
+
+
+
+
+
