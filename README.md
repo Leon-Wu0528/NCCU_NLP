@@ -34,7 +34,8 @@ predictions = loaded_model.predict(
 ```
 ## References
 - Mitchell A. Gordon, 2019, [All The Ways You Can Compress BERT](https://mitchgordon.me/machine/learning/2019/11/18/all-the-ways-to-compress-BERT.html)
-- [Stickland, et al., ICML’19] [Houlsby, et al., ICML’19]
+- Stickland, et al., ICML’19
+- Houlsby, et al., ICML’19
 
 
 
