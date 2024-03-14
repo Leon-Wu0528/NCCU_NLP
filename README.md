@@ -1,8 +1,11 @@
 # NCCU_NLP
 This repository contains my assignments and code for the Natural Language Processing course at NCCU.
 
-## 專案需求說明
-* [請參考資料夾-XXX/ooo/02.需求與架構分析](url)
+## Folder Description
+* Automated Fact Retrieval and Verification System:
+	The course provides a fact database and a claim. Students are required to develop an automated fact retrieval and verification system to validate the truthfulness of 	the claim. If the claim can be "supported" or "opposed" by facts, the system must also provide evidence sentences by retrieving articles from the database.
+* homework:
+	Classroom assignments include Chinese_word_segmentation, Naive_Bayes_Classifier, Stance_Detection.	
 
 ## 開發詳細規格
 * [請參考資料夾-XXX/ooo/02.需求與架構分析](url)
