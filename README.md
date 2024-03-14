@@ -7,7 +7,7 @@ The course provides a fact database and a claim. Students are required to develo
 * homework:   
 Classroom assignments include Chinese_word_segmentation, Naive_Bayes_Classifier, Stance_Detection.	
 
-## 開發詳細規格
+## Project File Description
 * [請參考資料夾-XXX/ooo/02.需求與架構分析](url)
 
 ## 專案相關工具與Web API/Services使用方式
