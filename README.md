@@ -11,7 +11,7 @@ Classroom assignments include Chinese_word_segmentation, Naive_Bayes_Classifier,
 [brief report](Automated%20Fact%20Retrieval%20and%20Verification%20System/brief_report.pdf)
 
 
-## Example
+## Demo
 ```python
 from transformers import BertTokenizer, TFBertForSequenceClassification
 tokenizer = BertTokenizer.from_pretrained('bert-base-chinese')
