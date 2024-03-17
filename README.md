@@ -15,6 +15,32 @@ Classroom assignments include Chinese_word_segmentation, Naive_Bayes_Classifier,
 ```python
 from transformers import BertTokenizer, TFBertForSequenceClassification
 tokenizer = BertTokenizer.from_pretrained('bert-base-chinese')
+
+# 載入資料預處理結果
+input_ids_files = ['input_ids_part1.npy', 'input_ids_part2.npy', 'input_ids_part3.npy', 'input_ids_part4.npy', 'input_ids_part5.npy', 'input_ids_part6.npy']
+attention_masks_files = ['attention_masks_part1.npy', 'attention_masks_part2.npy', 'attention_masks_part3.npy', 'attention_masks_part4.npy', 'attention_masks_part5.npy', 'attention_masks_part6.npy']
+
+input_ids_list = []
+attention_masks_list = []
+
+for input_ids_file, attention_masks_file in zip(input_ids_files, attention_masks_files):
+    input_ids_part = np.load(input_ids_file, mmap_mode='r')
+    attention_masks_part = np.load(attention_masks_file, mmap_mode='r')
+    input_ids_list.append(input_ids_part)
+    attention_masks_list.append(attention_masks_part)
+
+input_ids = np.concatenate(input_ids_list, axis=0)
+attention_masks = np.concatenate(attention_masks_list, axis=0)
+# 建立模型
+model = TFBertForSequenceClassification.from_pretrained('bert-base-chinese', num_labels=3)
+# 編譯模型
+optimizer = tf.keras.optimizers.Adam(learning_rate=1e-5)
+loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
+metric = tf.keras.metrics.SparseCategoricalAccuracy('accuracy')
+
+model.compile(optimizer=optimizer, loss=loss, metrics=[metric])
+
+
 test_input_ids = []
 test_attention_masks = []
 
